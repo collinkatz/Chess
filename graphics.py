@@ -426,7 +426,7 @@ class Transform:
 # Default values for various item configuration options. Only a subset of
 #   keys may be present in the configuration dictionary for a given item
 DEFAULT_CONFIG = {"fill": "",
-                  "outline": "black",
+                  "outline": "",
                   "width": "1",
                   "arrow": "none",
                   "text": "",
