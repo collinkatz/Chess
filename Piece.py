@@ -4,12 +4,21 @@ from abc import *
 class Piece:
     type = ""
     position = (0, 0)
-    color = "White"
+    color = "black"
 
     def __init__(self, type, pos, color):
         self.type = type
         self.position = pos
         self.color = color
+
+    def __eq__(self, other):
+        if str(self) == str(other):
+            return True
+        else:
+            return False
+
+    def __str__(self):
+        return self.color + "_" + self.type
 
     def position_add(self, distance):
         """
@@ -29,10 +38,10 @@ class Pawn(Piece):
     direction_scalar = 1
 
     def __init__(self, pos, color):
-        super().__init__("Pawn", pos, color)
-        if color == "White":
+        super().__init__("pawn", pos, color)
+        if color == "white":
             self.direction_scalar = 1
-        elif color == "Black":
+        elif color == "black":
             self.direction_scalar = -1
 
     def valid_moves(self):
